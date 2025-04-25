@@ -1,4 +1,4 @@
-use hiber6dev2db;
+use hiber7pro2db;
 
 INSERT INTO `teachers` VALUES (1,1,NULL,'Αθανάσιος','Ανδρούτσος'),
 	(2,1,NULL,'Μάκης','Καπέτης'),
