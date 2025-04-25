@@ -1,4 +1,4 @@
-USE hiber6dev2db;
+USE hiber7pro2db;
 
 CREATE INDEX idx_courses_title ON courses (title);
 CREATE INDEX idx_regions_title ON regions (title);
