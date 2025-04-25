@@ -10,6 +10,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.TypedQuery;
 
+import javax.print.attribute.standard.JobKOctets;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -37,6 +38,36 @@ public class App {
 //        teacher.addRegion(region);
 //
 //        em.persist(teacher);
+
+        // merge
+//        String sql = "SELECT t FROM Teacher t WHERE t.lastname = :lastname";
+//        TypedQuery<Teacher> query = em.createQuery(sql, Teacher.class);
+//        query.setParameter("lastname", "Ανδρούτσος");
+//        Teacher teacher = query.getSingleResult();
+//        teacher.setIsActive(false);
+//        em.merge(teacher);
+
+        // Select τους active με region Θεσσαλονίκη
+//        String sql = "SELECT t FROM Teacher t WHERE t.isActive = true AND t.region.title = :regionTitle";
+//        TypedQuery<Teacher> query = em.createQuery(sql, Teacher.class);
+//        query.setParameter("regionTitle", "Θεσσαλονίκη");
+//        List<Teacher> teachers = query.getResultList();
+//        teachers.forEach(System.out::println);
+
+        // Count των teachers ανά περιοχή
+        String sql = "SELECT r.title, COUNT(t) FROM Region r LEFT JOIN r.teachers t " +
+                "WHERE t.isActive = false OR t.isActive IS NULL GROUP BY r.title";
+
+        TypedQuery<Object[]> query = em.createQuery(sql, Object[].class);
+        List<Object[]> teachersPerRegion = query.getResultList();
+        for (Object[] el : teachersPerRegion) {
+            for (Object item : el) {
+                System.out.print(item + " ");
+            }
+            System.out.println();
+        }
+
+
 
 
 
