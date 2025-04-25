@@ -9,7 +9,7 @@ INSERT INTO regions (id, title) VALUES
 	(6, 'Δράμα'),
 	(7, 'Καβάλα'),
 	(8, 'Πάτρα'),
-	(9, 'Λάρισσα'),
+	(9, 'Λάρισα'),
 	(10, 'Χανιά');
 
 ALTER TABLE regions AUTO_INCREMENT = 11;
