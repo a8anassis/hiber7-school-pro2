@@ -1,0 +1,7 @@
+use hiber6dev2db;
+
+INSERT INTO `teacher_more_info` VALUES (1,'1991-01-12 09:30:00','MALE'),
+	(2,'2000-11-10 21:10:00','FEMALE');
+    
+    ALTER TABLE `teacher_more_info` AUTO_INCREMENT = 3;
+    
